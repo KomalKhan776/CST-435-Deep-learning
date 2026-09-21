@@ -62,7 +62,13 @@ The round-trip test requires `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` set in th
 
 Integrity and honesty is crucial while training models. It matters the most when data scientist move from synthetic data to real data because there could be hidden biases. There could be biases on how the data was collected what information was included or left out. Non-technical person might not be able to sense it with R squared value but a data scientist can. It is a huge responsibility to be transparent where the data comes from for training and what a model is capable of. 
 
+**Screenshots**
 
+![Converge](converge.png)
+
+![Diverge](diverge.png)
+
+![Run history](run-history.png)
 
 
 
