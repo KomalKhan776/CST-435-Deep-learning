@@ -35,9 +35,13 @@ Turning runs at a fixed number of epochs meaning that ml model will pass through
 
 **Run history**
 
-Coverging:
+Converging: Once a sufficient number of epochs have been trained the model has enough time to extract patterns from the data and has reach its limit. 
 
-Diverging:
+Diverging: If there are too many epochs the model might memorize noise in the training data. 
+
+R squared value act as a baseline if it close to 1 it shows a good fit (predictions matching real data). When R squared value is negative it indicated that model is performing worse thane expected baseline (prediction is missing the target data points)
+
+
 
 
 
