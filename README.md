@@ -41,8 +41,26 @@ Diverging: If there are too many epochs the model might memorize noise in the tr
 
 R squared value act as a baseline if it close to 1 it shows a good fit (predictions matching real data). When R squared value is negative it indicated that model is performing worse thane expected baseline (prediction is missing the target data points)
 
+**Testing**
+
+## Testing
+
+Run with `python -m pytest -q`. 
+
+All 7 tests pass
+
+- request-schema validation for `/predict`
+- smoke test for `/healthz`
+- numerical test that trained slope recovers the true slope
+- Supabase round-trip test that inserts a dataset, train on it, confirms a run row was written
+
+The round-trip test requires `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` set in the environment and skips otherwise.
+
 **Worldview reflection**
+
 Integrity and honesty is crucial while training models. It matters the most when data scientist move from synthetic data to real data because there could be hidden biases. There could be biases on how the data was collected what information was included or left out. Non-technical person might not be able to sense it with R squared value but a data scientist can. It is a huge responsibility to be transparent where the data comes from for training and what a model is capable of. 
+
+
 
 
 
