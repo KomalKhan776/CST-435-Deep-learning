@@ -25,7 +25,33 @@ lr = 0.0300 it still converges (error stop decreasing)
 lr = 0.035 with epochs = 10 it diverges and R^2 value goes negative (error increases, step size is too large and weights overshoots) 
 lr = 0.0400 with epochs = 100 api will shows an error (overflow, shows exploding gradient) 
 different lr was tested to understand how it affects the step size or minimize the error
+I choose lr = 0.0100 to show that it converges and o.300 is too close to limit that it breaks. 
 
 **Training.py API**
 
-It takes input x and y and then splits the data into 2 sets for training and testing. Pytorch is used to learn the best relationship between them in the form of a slope which is y = slope * x + intercept. Predictions are compared with real answers then error is calculated based on that slope and y intercept are adjusted to minimize the error. MSE, MAE, R^2 values are calculated which demonstrates how well the model is performing. Fastapi send performance metrics to Streamlit so user can review it. 
+It takes input x and y and then splits the data into 2 sets for training and testing (80%, 20%). Pytorch is used to learn the best relationship between them in the form of a slope which is y = slope * x + intercept. Predictions are compared with real answers then error is calculated based on that slope and y intercept are adjusted to minimize the error. MSE, MAE, R^2 values are calculated which demonstrates how well the model is performing. Fastapi send performance metrics to Streamlit so user can review it.
+
+Turning runs at a fixed number of epochs meaning that ml model will pass through a dataset with a predetermined number of times. Ml models can keep on running for infinite number of times if not checked. It is like putting a lock so it doesn't enter an infinite loop. 
+
+**Run history**
+
+Coverging:
+
+Diverging:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
