@@ -21,7 +21,7 @@
 **Learning rate:**
 
 When lr = 0.0100 then R^2 value was close to 1 (0.980) and true line was y = 2.5x + 1
-lr = 0.0300 it still converges (error stop decreasing)
+lr = 0.0100 it converges (error shrink)
 lr = 0.035 with epochs = 10 it diverges and R^2 value goes negative (error increases, step size is too large and weights overshoots) 
 lr = 0.0400 with epochs = 100 api will shows an error (overflow, shows exploding gradient) 
 different lr was tested to understand how it affects the step size or minimize the error
@@ -31,7 +31,11 @@ I choose lr = 0.0100 to show that it converges and o.300 is too close to limit t
 
 It takes input x and y and then splits the data into 2 sets for training and testing (80%, 20%). Pytorch is used to learn the best relationship between them in the form of a slope which is y = slope * x + intercept. Predictions are compared with real answers then error is calculated based on that slope and y intercept are adjusted to minimize the error. MSE, MAE, R^2 values are calculated which demonstrates how well the model is performing. Fastapi send performance metrics to Streamlit so user can review it.
 
-Turning runs at a fixed number of epochs meaning that ml model will pass through a dataset with a predetermined number of times. Ml models can keep on running for infinite number of times if not checked. It is like putting a lock so it doesn't enter an infinite loop. 
+**Validation Split**
+
+20% is set aside to check if the model only memorized the data or actually understood the pattern and the metrics show how good or bad the model is working on the new data which it didn't see before.
+
+Training runs at a fixed number of epochs meaning that ml model will pass through a dataset with a predetermined number of times. Ml models can keep on running for infinite number of times if not checked. 
 
 **Run history**
 
@@ -42,8 +46,6 @@ Diverging: If there are too many epochs the model might memorize noise in the tr
 R squared value act as a baseline if it close to 1 it shows a good fit (predictions matching real data). When R squared value is negative it indicated that model is performing worse thane expected baseline (prediction is missing the target data points)
 
 **Testing**
-
-## Testing
 
 Run with `python -m pytest -q`. 
 
