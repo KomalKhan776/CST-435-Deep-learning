@@ -64,12 +64,11 @@ Integrity and honesty is crucial while training models. It matters the most when
 
 **Screenshots**
 
-![Converge](converge.png)
+![Converging run](screenshots/converge.png)
 
-![Diverge](diverge.png)
+![Diverging run](screenshots/diverge.png)
 
-![Run history](run-history.png)
-
+![Run history](screenshots/run-history.png)
 
 
 
